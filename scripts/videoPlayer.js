@@ -15,6 +15,7 @@ export const videoPlayerInit = () => {
     const videoTimePassed = document.querySelector('.video-time__passed');
     const videoProgress = document.querySelector('.video-progress');
     const videoTimeTotal = document.querySelector('.video-time__total');
+    const videoFullScreen = document.querySelector('.video-fullscreen')
     
 // Changing icons pause/play
 
@@ -27,6 +28,12 @@ export const videoPlayerInit = () => {
             videoButtonPlay.classList.remove('fa-play');
         }
     };
+
+// FullScreen
+
+    videoFullScreen.addEventListener('click', () => {
+        videoPlayer.requestFullscreen();
+    })
 
 // Function for playing video
 
@@ -77,7 +84,7 @@ export const videoPlayerInit = () => {
 
 // Video progress scale
 
-    videoProgress.addEventListener('change', () => {
+    videoProgress.addEventListener('input', () => {
         const duration = videoPlayer.duration;
         const value = videoProgress.value;
 
