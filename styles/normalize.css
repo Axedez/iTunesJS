@@ -347,3 +347,10 @@ template {
 [hidden] {
 	display: none;
 }
+/* Styles for volume range */
+
+.video-icon{ margin: 5px; cursor: pointer;}
+
+.video-volume{ max-width: 80px; }
+
+.volume-button { all: none }

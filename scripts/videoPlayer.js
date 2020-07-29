@@ -15,8 +15,11 @@ export const videoPlayerInit = () => {
     const videoTimePassed = document.querySelector('.video-time__passed');
     const videoProgress = document.querySelector('.video-progress');
     const videoTimeTotal = document.querySelector('.video-time__total');
-    const videoFullScreen = document.querySelector('.video-fullscreen')
-    
+    const videoVolume = document.querySelector('.video-volume');
+    const volumeButtonUp = document.querySelector('.volume-up');
+    const volumeButtonDown = document.querySelector('.volume-down');
+    const videoFullScreen = document.querySelector('.video-fullscreen');
+
 // Changing icons pause/play
 
     const toggleIcon = () => {
@@ -28,12 +31,6 @@ export const videoPlayerInit = () => {
             videoButtonPlay.classList.remove('fa-play');
         }
     };
-
-// FullScreen
-
-    videoFullScreen.addEventListener('click', () => {
-        videoPlayer.requestFullscreen();
-    })
 
 // Function for playing video
 
@@ -90,4 +87,33 @@ export const videoPlayerInit = () => {
 
         videoPlayer.currentTime = (value * duration) / 100;
     })
+
+// FullScreen
+
+    videoFullScreen.addEventListener('click', () => {
+        videoPlayer.requestFullscreen();
+    })
+
+// Loud range
+
+    videoVolume.addEventListener('input', () => {
+        videoPlayer.volume = videoVolume.value / 100;
+    })
+    videoPlayer.volume = videoVolume.value / 100;
+    videoVolume.value = videoPlayer.volume * 100;
+
+// Click event on audio buttons
+
+    volumeButtonUp.addEventListener('click', () => {
+        videoPlayer.volume = 1;
+        videoVolume.value = 100;
+    });
+    
+    volumeButtonDown.addEventListener('click', () => {
+        videoPlayer.volume = 0;
+        videoVolume.value = 0;
+    });
+
+
 };
+
