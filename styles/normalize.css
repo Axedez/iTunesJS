@@ -353,4 +353,6 @@ template {
 
 .video-volume{ max-width: 80px; }
 
+.radio-volume{ max-width: 300px; position: absolute; right: 300px;}
+
 .volume-button { all: none }
