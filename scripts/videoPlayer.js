@@ -1,11 +1,13 @@
 export const videoPlayerInit = () => {
-    
+
 // video-player
 // video-button__play
 // video-button__stop
 // video-time__passed
 // video-progress
 // video-time__total
+
+// Setting variables
 
     const videoPlayer = document.querySelector('.video-player');
     const videoButtonPlay = document.querySelector('.video-button__play');
@@ -14,7 +16,8 @@ export const videoPlayerInit = () => {
     const videoProgress = document.querySelector('.video-progress');
     const videoTimeTotal = document.querySelector('.video-time__total');
     
-    
+// Changing icons pause/play
+
     const toggleIcon = () => {
         if (videoPlayer.paused){
             videoButtonPlay.classList.remove('fa-pause');
@@ -25,6 +28,7 @@ export const videoPlayerInit = () => {
         }
     };
 
+// Function for playing video
 
     const togglePlay = () => {
         if (videoPlayer.paused){
@@ -39,8 +43,11 @@ export const videoPlayerInit = () => {
         videoPlayer.currentTime = 0;
     };
 
+// Correct display of time-bar
+
     const addZero = n => n < 10 ? '0' + n : n;
 
+// Events
 
     videoPlayer.addEventListener('click', togglePlay);
     videoButtonPlay.addEventListener('click', togglePlay);
@@ -50,6 +57,7 @@ export const videoPlayerInit = () => {
 
     videoButtonStop.addEventListener('click', stopPlay);
 
+// Time update for video player
 
     videoPlayer.addEventListener('timeupdate', () => {
         const currentTime = videoPlayer.currentTime;
@@ -66,6 +74,8 @@ export const videoPlayerInit = () => {
         videoTimePassed.textContent = `${addZero(minutePassed)}:${addZero(secondsPassed)}`;
         videoTimeTotal.textContent = `${addZero(minuteTotal)}:${addZero(secondsTotal)}`;
     })
+
+// Video progress scale
 
     videoProgress.addEventListener('change', () => {
         const duration = videoPlayer.duration;
