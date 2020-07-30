@@ -20,6 +20,7 @@ export const videoPlayerInit = () => {
     const volumeButtonUp = document.querySelector('.video-volume-up');
     const volumeButtonOff = document.querySelector('.video-volume-off');
     const videoFullScreen = document.querySelector('.video-fullscreen');
+    const playerBtn = document.querySelectorAll('.player-btn');
 
 // Changing icons pause/play
 
@@ -111,6 +112,13 @@ export const videoPlayerInit = () => {
         videoVolume.value = 0;
     });
 
+// Video paused when user change tab
+
+    playerBtn.forEach((button) => button.addEventListener('click' , () => {
+        if (videoPlayer.played){
+            videoPlayer.pause();
+        };
+}));
 
 };
 

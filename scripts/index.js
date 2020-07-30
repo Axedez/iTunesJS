@@ -3,6 +3,7 @@
 import {  radioPlayerInit  } from './radioPlayer.js'
 import {  musicPlayerInit  } from './musicPlayer.js'
 import {  videoPlayerInit  } from './videoPlayer.js'
+import {  TurnOffAllPlayers  } from './playersOff.js'
 
 // Set variiables
 
@@ -28,7 +29,8 @@ playerBtn.forEach((button, index) => button.addEventListener('click' , () => {
 
 // Initialization of imported JS scripts
 
-console.dir(document);
+console.dir(radioPlayerInit);
 radioPlayerInit();
 musicPlayerInit();
 videoPlayerInit();
+TurnOffAllPlayers();

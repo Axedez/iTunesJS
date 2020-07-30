@@ -16,6 +16,7 @@ export const musicPlayerInit = () => {
     const audioVolume = document.querySelector('.audio-volume');
     const volumeButtonUp = document.querySelector('.audio-volume-up');
     const volumeButtonOff = document.querySelector('.audio-volume-off');
+    const playerBtn = document.querySelectorAll('.player-btn');
 
 
     //Import audio folder
@@ -62,16 +63,22 @@ export const musicPlayerInit = () => {
         loadTrack();
     };
 
+// Change Icons
+
+    const changeIcon = () => {
+        audio.classList.toggle('play');
+        audioButtonPlay.classList.toggle('fa-play');
+        audioButtonPlay.classList.toggle('fa-pause');
+    };
+
+
     // Event control bar
 
     audioNavigation.addEventListener('click', event => {
         const target = event.target;
 
         if(target.classList.contains('audio-button__play')) {
-            audio.classList.toggle('play');
-            audioButtonPlay.classList.toggle('fa-play');
-            audioButtonPlay.classList.toggle('fa-pause');
-
+            changeIcon();
             if (audioPlayer.paused){
                 audioPlayer.play();
             } else {
@@ -143,5 +150,15 @@ export const musicPlayerInit = () => {
     })
     audioPlayer.volume = audioVolume.value / 100;
     audioVolume.value = audioPlayer.volume * 100;
+
+    // Music paused when user change tab
+
+    playerBtn.forEach((button) => button.addEventListener('click' , () => {
+            if (audioPlayer.paused == false){
+                audioPlayer.pause();
+                changeIcon();
+            };
+    }));
+
 
 };

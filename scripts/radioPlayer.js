@@ -1,5 +1,4 @@
 export const radioPlayerInit = () => {
-    console.log('RadioInit');
 
 // Variables
 
@@ -10,6 +9,7 @@ export const radioPlayerInit = () => {
     const radioItem = document.querySelectorAll('.radio-item');
     const radioStop = document.querySelector('.radio-stop');
     const radioVolume = document.querySelector('.radio-volume');
+    const playerBtn = document.querySelectorAll('.player-btn');
 
 // Audio constructor
 
@@ -57,7 +57,7 @@ export const radioPlayerInit = () => {
         changeIconPlay();
     })
 
-//Event for stopping radio
+    //Event for stopping radio
 
     radioStop.addEventListener('click', () => {
         if (audio.paused) {
@@ -74,6 +74,13 @@ export const radioPlayerInit = () => {
     audio.volume = radioVolume.value / 100;
     radioVolume.value = audio.volume * 100;
 
-    
+    //Radio stopped when user change tab
+
+    playerBtn.forEach((button) => button.addEventListener('click' , () => {
+        if (audio.paused == false){
+            audio.pause();
+            changeIconPlay();
+        };
+}));
 };
 
