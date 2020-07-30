@@ -74,7 +74,6 @@ export const radioPlayerInit = () => {
     audio.volume = radioVolume.value / 100;
     radioVolume.value = audio.volume * 100;
 
-
-
+    
 };
 

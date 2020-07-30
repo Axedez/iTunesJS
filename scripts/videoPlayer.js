@@ -1,3 +1,4 @@
+import { addZero } from './supScript.js';
 export const videoPlayerInit = () => {
 
 // video-player
@@ -16,8 +17,8 @@ export const videoPlayerInit = () => {
     const videoProgress = document.querySelector('.video-progress');
     const videoTimeTotal = document.querySelector('.video-time__total');
     const videoVolume = document.querySelector('.video-volume');
-    const volumeButtonUp = document.querySelector('.volume-up');
-    const volumeButtonDown = document.querySelector('.volume-down');
+    const volumeButtonUp = document.querySelector('.video-volume-up');
+    const volumeButtonOff = document.querySelector('.video-volume-off');
     const videoFullScreen = document.querySelector('.video-fullscreen');
 
 // Changing icons pause/play
@@ -46,10 +47,6 @@ export const videoPlayerInit = () => {
         videoPlayer.pause();
         videoPlayer.currentTime = 0;
     };
-
-// Correct display of time-bar
-
-    const addZero = n => n < 10 ? '0' + n : n;
 
 // Events
 
@@ -109,7 +106,7 @@ export const videoPlayerInit = () => {
         videoVolume.value = 100;
     });
     
-    volumeButtonDown.addEventListener('click', () => {
+    volumeButtonOff.addEventListener('click', () => {
         videoPlayer.volume = 0;
         videoVolume.value = 0;
     });

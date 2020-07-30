@@ -51,6 +51,7 @@
 		</div>
 
 		<article class="player-block video">
+			<h1>Rocket launch!</h1>
 			<div class="container">
 				<div class="video-container">
 					<video src="video/rocket_launching.mp4" class="video-player" poster="video/play.svg"></video>
@@ -60,9 +61,9 @@
 						<p class="video-time video-time__passed">00:00</p>
 						<input type="range" class="video-progress" style="max-width: 68%; "min="0" max="100" step="0.1" value="0">
 						<p class="video-time video-time__total">00:00</p>
-						<span class="fa fa-volume-off video-icon volume-button volume-down"></span>
+						<span class="fa fa-volume-off video-icon volume-button video-volume-off"></span>
 						<input type="range" class="video-volume" min="0" max="100" step="1" value="10">
-						<span class="fa fa-volume-up video-icon volume-button volume-up"></span>
+						<span class="fa fa-volume-up video-icon volume-button video-volume-up"></span>
 						<button class="fa fa-expand video-fullscreen video-icon"></button>
 					</nav>
 				</div>
@@ -91,6 +92,9 @@
 						<div class="audio-progress__timing"></div>
 					</div>
 					<span class="audio-time audio-time__total">00:00</span>
+					<span class="fa fa-volume-off video-icon volume-button audio-volume-off"></span>
+					<input type="range" class="audio-volume" min="0" max="100" step="1" value="40">
+					<span class="fa fa-volume-up video-icon volume-button audio-volume-up"></span>
 				</nav>
 			</footer>
 		</article>
