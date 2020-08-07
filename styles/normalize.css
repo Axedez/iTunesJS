@@ -379,3 +379,8 @@ template {
   justify-content: space-between;
   position: relative;
 }
+@media (max-width: 650px) {
+  .radio-volume {
+    display: none;
+  }
+}
