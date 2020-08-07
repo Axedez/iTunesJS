@@ -379,9 +379,3 @@ template {
   justify-content: space-between;
   position: relative;
 }
-
-.exit {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
